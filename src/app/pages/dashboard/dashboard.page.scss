@@ -1,0 +1,50 @@
+.logo{
+    color: #000000 !important;
+    background: url("../../../assets/logo-coco-bambu-mini.png") !important;
+    background-repeat: no-repeat !important;
+    height: 40px !important;
+    padding-left: 40px !important;
+
+}
+
+.search{
+    width: 500px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    padding-left: 200px !important;
+    background:  url("../../../assets/icon-busca.png") !important;
+    background-repeat: no-repeat !important;
+}
+
+.mainDiv {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+  
+.dish {
+    height: 140px;
+    padding-left: 40px;
+    border-top-width: 130px;
+    border-bottom-width: 120px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+
+
+}
+
+.dishName{
+    border-left-width: 20px;
+    margin-left: 30px;
+}
+
+.dishDraft{
+    //width: 600px;
+    //border-left-width: 20px;
+    //margin-left: 30px;
+    border-left-width: 20px;
+    margin-left: 30px;
+    width:100%;
+}

@@ -1,15 +1,36 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Dashboard</ion-title>
-  </ion-toolbar>
- </ion-header>
+
+ 
+  <div>
+    <ion-grid class="logo">
+    <ion-input class="search" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita..."></ion-input>
+    </ion-grid>
+  </div>
+  
+
  
  <ion-content padding>
-  <ion-button expand="block" routerLink="/details/42" routerDirection="forward">
-    Details
-  </ion-button>
- 
-  <ion-button expand="block" routerLink="/login" routerDirection="root">
-    Logout
-  </ion-button>
+   <ion-grid >
+     <ion-row *ngFor="let dish of return">
+       <ion-col>
+          <td>
+              <p><img class="dish" src="{{dish.image}}"></p>
+              <p class="dishName">{{dish.nomePrato}}</p>
+              <p class="dishName">{{dish.discricaoPrato}}</p>
+          </td>
+          
+             
+              
+           
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+     
+        
+     
+
+
+   
+
  </ion-content>
+
+ 
