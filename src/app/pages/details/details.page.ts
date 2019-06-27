@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-details',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  details: any;
+  
+  constructor(
+      private storage: Storage,
+  ) { }
 
-  constructor() { }
+  async ngOnInit() {
+    this.storage.get('details').then(details  => {
+      this.details = details
+    })
 
-  ngOnInit() {
   }
 
 }

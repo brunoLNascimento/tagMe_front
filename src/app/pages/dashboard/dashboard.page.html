@@ -1,33 +1,41 @@
 
- 
-  <div>
+ <ion-header>
+  <div class="header">
     <ion-grid class="logo">
-    <ion-input class="search" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita..."></ion-input>
+    <ion-input class="search" maxLength="50" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita...">
+      <ion-item class="request">Pedidos</ion-item>
+      <ion-item class="recipes">Receitas</ion-item>
+      <ion-item class="logout">Sair</ion-item>
+    </ion-input>
+
+ 
     </ion-grid>
   </div>
-  
+</ion-header>
 
  
- <ion-content padding>
+ <ion-content>
+   <ion-item>Últimos pedidos</ion-item>
    <ion-grid >
-     <ion-row *ngFor="let dish of return">
-       <ion-col>
-          <td>
-              <p><img class="dish" src="{{dish.image}}"></p>
-              <p class="dishName">{{dish.nomePrato}}</p>
+     <ion-row *ngFor="let dish of return"> 
+       <ion-item>
+          <img class="dish" src="{{dish.image}}"> 
+          <ion-row>
+          <div>
+            <p class="dishName">{{dish.nomePrato}}</p>
               <p class="dishName">{{dish.discricaoPrato}}</p>
-          </td>
+          </div>
           
-             
-              
-           
-        </ion-col>
+          <div  (click)="details(dish)" class="seeRecipes">Ver receita</div>
+
+        </ion-row>
+       </ion-item>
+        
       </ion-row>
     </ion-grid>
-     
-        
-     
-
+  
+  
+    
 
    
 

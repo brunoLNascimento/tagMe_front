@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from 'src/app/loading/loading.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,8 @@ export class DashboardPage implements OnInit {
     public loading: LoadingService,
     private http: HttpClient,
     private toastController: ToastController,
+    private storage: Storage,
+    private nav: NavController,
   ) { }
 
   ngOnInit() {
@@ -43,6 +46,13 @@ export class DashboardPage implements OnInit {
       color: color
     });
     toast.present();
+  }
+
+  details(dish){
+  
+      this.storage.set('details', dish)
+        this.nav.navigateForward(['details'])
+      
   }
 
 }

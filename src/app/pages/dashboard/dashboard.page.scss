@@ -1,19 +1,58 @@
+.header{
+    background: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+
 .logo{
     color: #000000 !important;
     background: url("../../../assets/logo-coco-bambu-mini.png") !important;
     background-repeat: no-repeat !important;
     height: 40px !important;
     padding-left: 40px !important;
+    padding-top: 0px !important;
 
 }
 
 .search{
+    background: #ffffff;
+    left: 200px !important;
     width: 500px !important;
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
-    padding-left: 200px !important;
-    background:  url("../../../assets/icon-busca.png") !important;
-    background-repeat: no-repeat !important;
+    border-left-width: 108px !important;
+
+    //padding-left: 10px !important;
+}
+
+.request{
+    background: url("../../../assets/icon-login.png");
+    color: #000000 !important;
+    left: 550px !important;
+    width: 90px !important;
+    //background-repeat: no-repeat !important;
+}
+
+.recipes{
+    background-color: #000000 !important;
+    color: #000000 !important;
+    left: 600px !important;
+    width: 90px !important;
+  ///  background: url("../../../assets/icon-login.png");
+   // background-repeat: no-repeat;
+}
+
+.logout{
+    background-color: #000000 !important;
+    color: #000000 !important;
+    left: 650px !important;
+    width: 90px !important;
+    //background: url("../../../assets/icon-login.png");
+    //background-repeat: no-repeat;
 }
 
 .mainDiv {
@@ -25,12 +64,15 @@
   }
   
 .dish {
-    height: 140px;
     padding-left: 40px;
     border-top-width: 130px;
     border-bottom-width: 120px;
     margin-bottom: 20px;
+    //margin-left: 10px;
     margin-top: 40px;
+    width: 240px;
+    height: 160px;
+
 
 
 }
@@ -38,6 +80,10 @@
 .dishName{
     border-left-width: 20px;
     margin-left: 30px;
+    //width: 600px;
+    width: 400px;
+    padding-top: 0px;
+
 }
 
 .dishDraft{
@@ -48,3 +94,18 @@
     margin-left: 30px;
     width:100%;
 }
+
+.seeRecipes{
+    border-radius: 50%;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: top;
+    background-color: orange;
+    margin-left: 20px;
+    margin-top: 30px;
+
+}
+
