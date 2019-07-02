@@ -1,13 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-item>
-      <img src="{{details.image}}">
-      <div>{{details.nomePrato}}</div>
-      <div>{{details.discricaoPrato}}</div>
-    </ion-item>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="tela">
+    <div>
+      <div class="test"> <img src="{{details?.image}}"></div>
+        <div class="teste1">{{details?.nomePrato}}</div>
+        <div class="teste2">{{details?.discricaoPrato}}</div>
+      
+    </div>
 
+    <div>
+   
+    <ion-list>Ingredientes
+      <ion-item *ngFor="let dish of test">
+        <ion-label >{{dish?.ingredientes}}</ion-label>
+        <ion-checkbox class="checkbox-icon" slot="start" (click)="checkIngredientes(dish)" ></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>Modo de Preparo
+      <ion-item *ngFor="let modo of test1">
+      <ion-grid>
+        <ion-row>{{modo?.passo}}</ion-row>
+      
+      <ion-label class="aateste">{{modo?.modoPreparo}}</ion-label>
+    </ion-grid>  
+      <ion-checkbox *ngIf="this.iniciar == true" class="checkbox-icon" slot="start" (click)="checkPassos(modo)"></ion-checkbox>
+      
+    </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-button *ngIf="this.iniciar == false" (click)="start()">Iniciar preparação</ion-button>
+  <ion-button *ngIf="this.iniciar == true" (click)="finish()">Finalizar</ion-button>
+  </div>
 </ion-content>

@@ -24,16 +24,19 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
     this.loading.present();
-    this.http.get("http://localhost:4000/tagMe/menu").subscribe(res =>{
+    this.http.get("http://localhost:3000/tagMe/menu").subscribe(res =>{
       this.loading.dismiss();
       this.return = res
+      this.storage.set('menu', this.return)
     })
   }
 
   updateList() {
-    this.http.get(`http://localhost:4000/tagMe/menu/${this.searchQuery}`)
+    this.http.get(`http://localhost:3000/tagMe/menu/${this.searchQuery}`)
     .subscribe( async (response: any) => {
+  //    this.storage.get('details').then(details  => {
       this.return = response
+      //this.return = details
     },(error: any) => {
       this.toast(error.error.message, 'danger');
     });

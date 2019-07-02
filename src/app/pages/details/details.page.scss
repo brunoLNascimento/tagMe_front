@@ -1,0 +1,44 @@
+.tela{
+   align-content: center !important; 
+   width: 762px;
+   height: 960px;  
+}
+
+.test{
+    width: 800px !important;
+    height: 600px;  
+}
+
+.teste1{
+    position: absolute !important;
+    margin-top: -200px;
+    width: 600px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.teste2{
+    position: absolute !important;
+    margin-top: -150px;
+    width: 600px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.checkbox-icon{
+    --border-color: #ddcdcd !important;
+    --border-radius: 50% !important;
+    --background: #ffffff !important;
+    --checkmark-color: #ffffff !important;
+    --background-checked:  green;
+    --border-color-checked: #ffffff;	
+    width: 30px;
+    height: 30px;
+}
+.aateste{
+    height: 50px !important;
+    width: 800px !important;
+
+
+}
