@@ -7,9 +7,9 @@
   <div class="login">
     <div class="center">
 
-      <ion-input id="usuario" class="usuario" placeholder= "Nome do usuário"></ion-input>
-      <ion-input id="senha" class="senha" placeholder= "Senha"></ion-input>
-      <ion-button routerLink="/dashboard" routerDirection="root"> Acessar </ion-button>
+      <ion-input id="usuario" [(ngModel)]="usuarioLogin" class="usuario" placeholder= "Nome do usuário"></ion-input>
+      <ion-input id="senha" [(ngModel)]="senhaLogin" class="senha" placeholder= "Senha" type="password" ></ion-input>
+      <ion-button (click)="login()"> Acessar </ion-button>
     </div>
   </div>
   

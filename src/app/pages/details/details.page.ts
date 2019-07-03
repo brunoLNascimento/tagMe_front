@@ -119,7 +119,6 @@ export class DetailsPage implements OnInit {
       message: message,
       buttons: ['Entendi']
     });
-
     await alert.present();
   }
 

@@ -10,10 +10,10 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-
   res: any;
   return: any;
   searchQuery: any;
+
   constructor( 
     public loading: LoadingService,
     private http: HttpClient,
@@ -42,6 +42,16 @@ export class DashboardPage implements OnInit {
     });
   }
 
+  details(dish){
+    this.storage.set('details', dish)
+    this.nav.navigateForward(['details'])
+  }
+
+  logout(){
+    this.storage.clear()
+    this.nav.navigateForward(['login'])
+  }
+
   async toast(msg, color) {
     const toast = await this.toastController.create({
       message: msg,
@@ -49,13 +59,6 @@ export class DashboardPage implements OnInit {
       color: color
     });
     toast.present();
-  }
-
-  details(dish){
-  
-      this.storage.set('details', dish)
-        this.nav.navigateForward(['details'])
-      
   }
 
 }

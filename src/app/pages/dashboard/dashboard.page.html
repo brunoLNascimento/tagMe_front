@@ -5,7 +5,7 @@
     <ion-input class="search" maxLength="50" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita...">
       <ion-item class="request">Pedidos</ion-item>
       <ion-item class="recipes">Receitas</ion-item>
-      <ion-item class="logout">Sair</ion-item>
+      <ion-item class="logout" (click)="logout()">Sair</ion-item>
     </ion-input>
 
  
