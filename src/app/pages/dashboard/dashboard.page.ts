@@ -26,7 +26,7 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
     this.loading.present();
-    this.http.get(environment + "/tagMe/menu").subscribe(res =>{
+    this.http.get(environment.API_URL + "/tagMe/menu").subscribe(res =>{
       this.loading.dismiss();
       this.return = res
       this.storage.set('menu', this.return)
@@ -34,7 +34,7 @@ export class DashboardPage implements OnInit {
   }
 
   updateList() {
-    this.http.get(environment + `/tagMe/menu/${this.searchQuery}`)
+    this.http.get(environment.API_URL + `/tagMe/menu/${this.searchQuery}`)
     .subscribe( async (response: any) => {
       this.return = response
     },(error: any) => {

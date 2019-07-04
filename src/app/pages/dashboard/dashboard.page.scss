@@ -4,29 +4,34 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    //padding: 20px;
+    //padding-bottom: 30px;
+    //padding-top: 50px;
+    height: 100px;
 
 }
 
 .logo{
-    color: #000000 !important;
-    background: url("../../../assets/logo-coco-bambu-mini.png") !important;
-    background-repeat: no-repeat !important;
+    background: url("../../../assets/logo-coco-bambu-mini.png");
+    background-repeat: no-repeat;
+    width: 0px !important;
     height: 40px !important;
-    padding-left: 40px !important;
-    padding-top: 0px !important;
+    margin-left: 40px !important;
 
 }
 
 .search{
-    background: #ffffff;
     left: 200px !important;
     width: 500px !important;
+    background: #ffffff;
     border-left-width: 108px !important;
 
     //padding-left: 10px !important;
+}
+
+.iconFind{
+    background: url("../../../assets/icon-busca.png");
+    background-repeat: no-repeat;
 }
 
 .request{
@@ -47,12 +52,15 @@
 }
 
 .logout{
+    --background: url("../../../assets/icon-login.png");
+    --background-repeat: no-repeat;
+    --text-align: bottom;
     background-color: #000000 !important;
-    color: #000000 !important;
-    left: 650px !important;
-    width: 90px !important;
-    //background: url("../../../assets/icon-login.png");
-    //background-repeat: no-repeat;
+    color: #ffffff !important;
+    left: 600px !important;
+    width: 60px;
+    height: 60px;
+
 }
 
 .mainDiv {
