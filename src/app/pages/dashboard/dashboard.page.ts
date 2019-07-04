@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoadingService } from 'src/app/loading/loading.service';
 import { ToastController, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { environment } from '../../environment/environment.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
     this.loading.present();
-    this.http.get("http://localhost:3000/tagMe/menu").subscribe(res =>{
+    this.http.get(environment + "/tagMe/menu").subscribe(res =>{
       this.loading.dismiss();
       this.return = res
       this.storage.set('menu', this.return)
@@ -33,22 +34,9 @@ export class DashboardPage implements OnInit {
   }
 
   updateList() {
-    this.http.get(`http://localhost:3000/tagMe/menu/${this.searchQuery}`)
+    this.http.get(environment + `/tagMe/menu/${this.searchQuery}`)
     .subscribe( async (response: any) => {
-    //this.storage.get('menu').then(menu  => {
       this.return = response
-     
-  /*  if(this.searchQuery){
-      this.return.foreach(function(nomePrato){
-        this.searchQuery = new RegExp(this.searchQuery)
-       var teste = this.searchQuery.exec(nomePrato)
-       this.return = teste
-
-      })
-    }else{
-      this.return = menu
-    }*/
-
     },(error: any) => {
       this.toast(error.error.message, 'danger');
     });
