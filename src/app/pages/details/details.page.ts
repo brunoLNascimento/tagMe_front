@@ -25,6 +25,7 @@ export class DetailsPage implements OnInit {
   header: any;
   finalizar: any;
   ingredientes: any;
+  progress: any;
 
   constructor(
       private storage: Storage,
@@ -65,9 +66,11 @@ export class DetailsPage implements OnInit {
     if(!modo.checked){
       modo.checked = true
       this.menu = this.menu + 1
+      this.progress = this.menu
     }else{
       modo.checked = false
       this.menu = this.menu - 1
+      this.progress = this.menu
     }
   }
   
@@ -93,7 +96,7 @@ export class DetailsPage implements OnInit {
         this.minutos = Math.floor(seg / 60000) % 60
         this.segundos = Math.floor(seg / 1000) % 60
       
-        if(this.hora > 1){
+        if(this.hora > 0){
           this.message = "Prato finalizado com sucesso em " +this.hora+ " hora(s) " +this.minutos+ " minutos e " +this.segundos+ " segundos!"
         }else{
           this.message = "Prato finalizado com sucesso em " +this.minutos+ " minutos e " +this.segundos+ " segundos!"
@@ -111,6 +114,10 @@ export class DetailsPage implements OnInit {
   home(){
     this.nav.navigateForward(['dashboard'])
     this.storage.set("details", "")  
+  }
+
+  backDashboard(){
+    this.nav.navigateForward(['dashboard'])
   }
 
   async presentAlert(message, header) {

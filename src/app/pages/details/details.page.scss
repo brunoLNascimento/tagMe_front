@@ -1,15 +1,47 @@
 .tela{
    align-content: center !important; 
-   width: 762px;
-   height: 960px;  
+   width: 1000px;
+   height: 100%;  
+}
+.back{
+    background: url("../../../assets/icon-back.png");    
+    background-repeat: no-repeat;
+    position: absolute !important;
+    width: 80px;
+    height: 40px;  
 }
 
-.test{
-    width: 800px !important;
-    height: 600px;  
+.backA{
+    margin-left: 50px;
+    margin-top: 10px;
+    color: #ffffff;
+    font-style: bolder;
+    font-size: 18px;
+    width: 70px;
 }
 
-.teste1{
+.iconTime{
+    background: url("../../../assets/icon-time.png");    
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    position: absolute !important;
+    margin-left: 550px;
+    margin-top: 15px;
+    padding-top: 5px;
+    height: 50px;
+    width: 200px;
+}
+
+.iconTimeA{
+    margin-left: 50px
+}
+.image{
+    width: 100% !important;
+    height: 100%;
+      
+}
+
+.dish{
     position: absolute !important;
     margin-top: -200px;
     width: 600px;
@@ -18,7 +50,7 @@
     font-size: 24px;
 }
 
-.teste2{
+.description{
     position: absolute !important;
     margin-top: -150px;
     width: 600px;
@@ -26,6 +58,14 @@
     font-weight: bold;
 }
 
+.font{
+    margin-left: 10px !important;
+    font-size: 18px;
+    font-style: bolder;
+}
+.fontP{
+    --font-style: bolder;
+}
 .checkbox-icon{
     --border-color: #ddcdcd !important;
     --border-radius: 50% !important;
@@ -36,9 +76,19 @@
     width: 30px;
     height: 30px;
 }
-.aateste{
+.modo{
     height: 50px !important;
     width: 800px !important;
 
 
+}
+
+.button{
+    --background: #f0740f !important;
+    margin-left: 90%
+}
+
+.buttonFinish{
+    --background: #22f00f !important;
+    margin-left: 90%
 }

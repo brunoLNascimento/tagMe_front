@@ -1,53 +1,35 @@
-
- <ion-header>
+<ion-content class="tamanho">
+ 
   <div class="header">
     <ion-grid class="logo">
-      
-    <ion-input class="search" maxLength="50" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita...">
-      <ion-item class="logout" (click)="logout()">Sair
-        
-      </ion-item>
-    </ion-input>
-      
-      
-  
-
-    <!--
-      <ion-item class="request">Pedidos</ion-item>
-      <ion-item class="recipes">Receitas</ion-item>
-      <ion-item class="logout" (click)="logout()">Sair</ion-item>
-    -->
- 
+      <ion-input class="search" maxLength="50" [(ngModel)]="searchQuery" (keyup)="updateList()"  placeholder= "Buscar receita...">
+        <!-- <ion-item class="request">Pedidos</ion-item>
+        <ion-item class="recipes">Receitas</ion-item>
+        <ion-item class="logout" (click)="logout()">Sair</ion-item>
+        -->
+        <ion-item class="logout" (click)="logout()">
+          <div class="logoutSair">Sair</div>
+        </ion-item>
+      </ion-input>
     </ion-grid>
   </div>
-</ion-header>
 
- 
  <ion-content>
-   <ion-item>Últimos pedidos</ion-item>
+   <ion-item *ngIf="return" class="pedido">Últimos pedidos</ion-item>
    <ion-grid >
      <ion-row *ngFor="let dish of return"> 
        <ion-item>
           <img class="dish" src="{{dish.image}}"> 
           <ion-row>
-          <div>
-            <p class="dishName">{{dish.nomePrato}}</p>
-              <p class="dishName">{{dish.discricaoPrato}}</p>
-          </div>
-          
-          <div  (click)="details(dish)" class="seeRecipes">Ver receita</div>
-
-        </ion-row>
-       </ion-item>
-        
+            <div class="divSize">
+              <p class="dishName">{{dish.nomePrato}}</p>
+              <p class="dishDraft">{{dish.discricaoPrato}}</p>
+            </div>
+            <div  (click)="details(dish)" class="seeRecipes">Ver receita</div>
+          </ion-row>
+        </ion-item>
       </ion-row>
     </ion-grid>
-  
-  
-    
-
-   
-
  </ion-content>
 
- 
+</ion-content>

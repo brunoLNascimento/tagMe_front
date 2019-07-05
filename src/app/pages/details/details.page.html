@@ -1,39 +1,44 @@
 <ion-content>
   <div class="tela">
     <div>
-      <div class="test"> <img src="{{details?.image}}"></div>
-        <div class="teste1">{{details?.nomePrato}}</div>
-        <div class="teste2">{{details?.discricaoPrato}}</div>
-      
+      <div (click)="backDashboard()" class="back">
+        <div (click)="backDashboard()" class="backA" >Voltar</div>
+      </div>
+
+      <div class="iconTime">
+        <div class="iconTimeA">Tempo de Preparo</div>
+        <div class="iconTimeA">{{details?.tempo}}</div>
+      </div>
+
+      <div class="image"><img src="{{details?.image}}"></div>
+      <div class="dish">{{details?.nomePrato}}</div>
+      <div class="description">{{details?.discricaoPrato}}</div>
     </div>
 
     <div>
-   
-    <ion-list>Ingredientes
-      <ion-item *ngFor="let dish of receips">
-        <ion-label >{{dish?.ingredientes}}</ion-label>
-        <ion-checkbox *ngIf="this.iniciar == false"  class="checkbox-icon" slot="start" (click)="checkIngredientes(dish)"></ion-checkbox>
-        <ion-checkbox *ngIf="this.iniciar == true"  class="checkbox-icon" slot="start" [(ngModel)]="dish.checked" (click)="checkIngredientes(dish)" disabled></ion-checkbox>
-      </ion-item>
-    </ion-list>
+      <ion-list class="font">Ingredientes
+        <ion-item *ngFor="let dish of receips">
+          <ion-label >{{dish?.ingredientes}}</ion-label>
+          <ion-checkbox *ngIf="this.iniciar == false"  class="checkbox-icon" slot="start" (click)="checkIngredientes(dish)"></ion-checkbox>
+          <ion-checkbox *ngIf="this.iniciar == true"  class="checkbox-icon" slot="start" [(ngModel)]="dish.checked" (click)="checkIngredientes(dish)" disabled></ion-checkbox>
+        </ion-item>
+      </ion-list>
     
-    <ion-list>Modo de Preparo
-      <ion-item *ngFor="let modo of modoPreparo">
-      <ion-grid>
-        <ion-row>{{modo?.passo}}</ion-row>
-      
-      <ion-label class="aateste">{{modo?.modoPreparo}}</ion-label>
-    </ion-grid>  
-      <ion-checkbox *ngIf="this.iniciar == false" class="checkbox-icon" slot="start" (click)="checkPassos(modo)" disabled></ion-checkbox>
-      <ion-checkbox *ngIf="this.iniciar == true" class="checkbox-icon" slot="start" (click)="checkPassos(modo)"></ion-checkbox>
-      
-    </ion-item>
-    </ion-list>
-  </div>
+      <ion-list class="font">Modo de Preparo
+        <ion-item *ngFor="let modo of modoPreparo">
+          <ion-grid>
+            <ion-row class="fontP">{{modo?.passo}}</ion-row>
+            <ion-label class="modo">{{modo?.modoPreparo}}</ion-label>
+          </ion-grid>  
 
-  <ion-button *ngIf="this.iniciar == false" (click)="start()">Iniciar preparação</ion-button>
-  <ion-button *ngIf="this.iniciar == true && this.finalizar == false" (click)="finish()">Finalizar</ion-button>
-  <ion-button *ngIf="this.finalizar == true" (click)="finish()" disabled>Finalizar</ion-button>
-  <ion-button *ngIf="this.finalizar == true" (click)="home()">Ver outra receita!</ion-button>
+          <ion-checkbox *ngIf="this.iniciar == false" class="checkbox-icon" slot="start" (click)="checkPassos(modo)" disabled></ion-checkbox>
+          <ion-checkbox *ngIf="this.iniciar == true" class="checkbox-icon" slot="start" (click)="checkPassos(modo)"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-button class="button" *ngIf="this.iniciar == false" (click)="start()">Iniciar preparação</ion-button>
+    <ion-button class="buttonFinish" *ngIf="this.iniciar == true && this.finalizar == false" (click)="finish()">Finalizar</ion-button>
+    <ion-button class="button" *ngIf="this.finalizar == true" (click)="home()">Voltar</ion-button>
   </div>
 </ion-content>

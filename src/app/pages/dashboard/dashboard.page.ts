@@ -44,7 +44,7 @@ export class DashboardPage implements OnInit {
 
   details(dish){
     this.storage.set('details', dish)
-   this.nav.navigateForward(['details'])
+     this.nav.navigateForward(['details'])
   }
 
   logout(){
